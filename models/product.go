@@ -1,7 +1,8 @@
 package models
 
+// Product table model
 type Product struct {
-	ProductId       int     `gorm:"primary_key" json:"product_id"`
+	ProductID       int     `gorm:"primary_key" json:"product_id"`
 	Name            string  `gorm:"type:varchar(100);not null" json:"name"`
 	Description     string  `gorm:"type:varchar(1000);not null" json:"description"`
 	Price           float32 `gorm:"type:decimal(10,2)" json:"price"`
@@ -12,7 +13,7 @@ type Product struct {
 	Display         int     `gorm:"type:smallint(6);not null" json:"status"`
 }
 
-// set table name
+// TableName set table name
 func (Product) TableName() string {
 	return "product"
 }

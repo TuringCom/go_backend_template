@@ -1,11 +1,12 @@
 package models
 
+// ProductAttribute table model
 type ProductAttribute struct {
-	ProductId        int `gorm:"not null" json:"product_id"`
-	AttributeValueId int `gorm:"not null" json:"attribute_value_id"`
+	ProductID        int `gorm:"not null" json:"product_id"`
+	AttributeValueID int `gorm:"not null" json:"attribute_value_id"`
 }
 
-// set table name
+// TableName set table name
 func (ProductAttribute) TableName() string {
 	return "product_attribute"
 }

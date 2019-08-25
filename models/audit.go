@@ -2,15 +2,16 @@ package models
 
 import "time"
 
+// Audit table model
 type Audit struct {
-	AuditId   int `gorm:"primary_key" json:"audit_id"`
-	OrderId   int `gorm:"not null" json:"order_id"`
+	AuditID   int `gorm:"primary_key" json:"audit_id"`
+	OrderID   int `gorm:"not null" json:"order_id"`
 	CreatedOn time.Time
 	Message   string `gorm:"not null" json:"message"`
 	Code      int    `gorm:"not null" json:"code"`
 }
 
-// set table name
+// TableName set table name
 func (Audit) TableName() string {
 	return "audit"
 }

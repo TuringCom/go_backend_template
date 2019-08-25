@@ -1,11 +1,12 @@
 package models
 
+// ShippingRegion table model
 type ShippingRegion struct {
-	ShippingRegionId int    `gorm:"primary_key" json:"shipping_region_id"`
+	ShippingRegionID int    `gorm:"primary_key" json:"shipping_region_id"`
 	ShippingRegion   string `gorm:"type:varchar(100)" json:"shipping_region"`
 }
 
-// set table name
+// TableName set table name
 func (ShippingRegion) TableName() string {
 	return "shipping_region"
 }

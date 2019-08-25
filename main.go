@@ -1,9 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
+	"github.com/TuringCom/golang_challenge_template/models"
+	"github.com/TuringCom/golang_challenge_template/pkg/util"
 	"github.com/gin-gonic/gin"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 var db = make(map[string]string)
@@ -58,8 +62,16 @@ func setupRouter() *gin.Engine {
 	return r
 }
 
+func init() {
+	db := models.Setup()
+	defer db.Close()
+}
+
 func main() {
 	r := setupRouter()
 	// Listen and Server in 0.0.0.0:8080
-	r.Run(":8080")
+
+	port := util.GetEnv("PORT", "8000")
+
+	r.Run(fmt.Sprintf(":%s", port))
 }

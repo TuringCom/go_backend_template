@@ -24,3 +24,5 @@ gorm.db
 coverage.txt
 
 bak.*
+
+.env

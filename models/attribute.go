@@ -1,11 +1,12 @@
 package models
 
+// Attribute table model
 type Attribute struct {
-	AttributeId int    `gorm:"primary_key" json:"attribute_id"`
+	AttributeID int    `gorm:"primary_key" json:"attribute_id"`
 	Name        string `gorm:"not null" json:"name"`
 }
 
-// set table name
+// TableName set table name
 func (Attribute) TableName() string {
 	return "attribute"
 }
