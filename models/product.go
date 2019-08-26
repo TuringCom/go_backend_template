@@ -17,3 +17,12 @@ type Product struct {
 func (Product) TableName() string {
 	return "product"
 }
+
+// GetProducts get products
+func GetProducts() []*Product {
+	var products []*Product
+
+	db.Find(&products)
+
+	return products
+}

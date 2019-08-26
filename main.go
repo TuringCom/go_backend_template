@@ -10,8 +10,7 @@ import (
 )
 
 func init() {
-	db := models.Setup()
-	defer db.Close()
+	models.Setup()
 }
 
 func main() {
