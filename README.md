@@ -16,19 +16,23 @@ In order to install and run this project locally, you would need to have the fol
 
 - [**Golang**](https://golang.org/doc/install)
 - [**MySQL**](https://www.mysql.com/downloads/)
-- [**Govendor**]([https://https://bundler.io/](https://github.com/kardianos/govendor))
+- [**Govendor**](https://github.com/kardianos/govendor)
 
 ### Installation
 
 - Clone this repository
 
+- Make sure you have your `$GOPATH` and `$GOROOT` environment variables set
+
 - Navigate to the project directory
-...
+
 - Create a MySQL database and run the `sql` file in the database directory to migrate the database
 
 ```sh
   mysql -u <db_user_name> -D <db_name> -p < db/dump.sql
 ```
+
+- Run `govendor sync` to install the vendor libraries/dependencies
 
 - Run `go run main.go` to start the app in development
 
@@ -39,7 +43,7 @@ In order to install and run this project locally, you would need to have the fol
 `docker build -t go_application .`
 
 - Run container
-`docker run -it -p 8000:8000 -v $(pwd):/backend go_application`
+`docker run -it -p 8000:80 go_application`
 
 ## Request and Response Object API guide for all Endpoints
 
